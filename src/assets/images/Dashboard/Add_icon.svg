@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="Add_icon" transform="translate(-1107 -506)">
+    <g id="Ellipse_14" data-name="Ellipse 14" transform="translate(1107 506)" fill="none" stroke="#154787" stroke-width="1">
+      <circle cx="8" cy="8" r="8" stroke="none"/>
+      <circle cx="8" cy="8" r="7.5" fill="none"/>
+    </g>
+    <path id="_134224_add_plus_new_icon" data-name="134224_add_plus_new_icon" d="M9.549,5.484h-2.9v-2.9a.581.581,0,1,0-1.161,0v2.9h-2.9a.581.581,0,1,0,0,1.161h2.9v2.9a.581.581,0,1,0,1.161,0v-2.9h2.9a.581.581,0,1,0,0-1.161Z" transform="translate(1109 508)" fill="#154787"/>
+  </g>
+</svg>

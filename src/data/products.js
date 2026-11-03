@@ -1,0 +1,120 @@
+const raw = [
+  {
+    product_id: "ID3456",
+    score: 90,
+    available: 372,
+    unit_cost: 33.03 * 0.8,
+    selling_price: 33.03,
+    margin: 20,
+    desc: "Donec sed sapien sed nunc sagittis posuere.",
+  },
+  {
+    product_id: "ID6789",
+    score: 87,
+    available: 250,
+    unit_cost: 29.99 * 0.8,
+    selling_price: 29.99,
+    margin: 20,
+    desc: "Lorem ipsum dolor duis eu risus nec justo porttitor fringilla.",
+  },
+  {
+    product_id: "ID5567",
+    score: 88,
+    available: 412,
+    unit_cost: 37.5 * 0.8,
+    selling_price: 37.5,
+    margin: 20,
+    desc: "Vivamus eget magna ut risus imperdiet tincidunt.",
+  },
+  {
+    product_id: "ID9012",
+    score: 84,
+    available: 510,
+    unit_cost: 26.45 * 0.8,
+    selling_price: 26.45,
+    margin: 20,
+    desc: "Integer posuere magna nec orci rhoncus cursus.",
+  },
+  {
+    product_id: "ID2233",
+    score: 89,
+    available: 318,
+    unit_cost: 30.1 * 0.8,
+    selling_price: 30.1,
+    margin: 20,
+    desc: "Nullam varius elit a lectus porta fermentum.",
+  },
+  {
+    product_id: "ID7788",
+    score: 92,
+    available: 198,
+    unit_cost: 34.75 * 0.8,
+    selling_price: 34.75,
+    margin: 20,
+    desc: "Etiam nec orci sed sem vestibulum imperdiet.",
+  },
+  {
+    product_id: "ID4321",
+    score: 93,
+    available: 289,
+    unit_cost: 41.2 * 0.8,
+    selling_price: 41.2,
+    margin: 20,
+    desc: "Proin id felis ut orci varius vehicula.",
+  },
+  {
+    product_id: "ID12312008",
+    score: 30,
+    available: 5,
+    unit_cost: 30,
+    selling_price: 33,
+    margin: 10,
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  },
+  {
+    product_id: "ID12312007",
+    score: 30,
+    available: 5,
+    unit_cost: 30,
+    selling_price: 33,
+    margin: 10,
+    desc: "Lorem ipsum dolor sit amet, dolec amet etnam triva",
+  },
+];
+
+export const availableProducts = raw;
+
+export const suggestedProducts = raw.slice(0, 7);
+
+export const sourcingOptions = [
+  {
+    id: "ID14321",
+    inStock: false,
+    score: 90,
+    desc: "o-z/godney clip-on conduit body cover, 2in hub…",
+  },
+  {
+    id: "SST 702-1-1/2-AL",
+    inStock: true,
+    score: 90,
+    desc: "asg manufacturing 675a conduit hub, aluminium…",
+  },
+  {
+    id: "MID 496-7",
+    inStock: false,
+    score: 90,
+    desc: "asg manufacturing 675a conduit body cover…",
+  },
+  {
+    id: "GHT 882-4",
+    inStock: true,
+    score: 88,
+    desc: "premium steel conduit hub, corrosion-resistant finish, 4in size…",
+  },
+  {
+    id: "PLX 920-MR",
+    inStock: false,
+    score: 92,
+    desc: "polymer conduit body cover, medium-range, impact-safe material…",
+  },
+];

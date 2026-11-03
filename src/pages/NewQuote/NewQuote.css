@@ -1,0 +1,1018 @@
+@scope (.quote-view-page) {
+  .main-content-section {
+    position: relative;
+  }
+
+  .subtext {
+    max-width: 180px;
+  }
+
+  .click-to-add-btn {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    margin-top: 6vw;
+    gap: 1vw;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Poppins Semibold";
+    color: rgb(73, 73, 73);
+  }
+
+  button:disabled {
+    opacity: 0.5;
+  }
+
+  .items-table td,
+  .items-table th {
+    border-inline: none;
+  }
+
+  .bold {
+    white-space: nowrap;
+  }
+
+  .table-container {
+    border: none;
+  }
+
+  .items-table-container {
+    position: relative;
+  }
+
+  .items-table tr:hover .del-quote-btn {
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  td.checkbox {
+    position: relative;
+  }
+
+  td.checkbox input::before {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    top: 10%;
+    background-color: transparent;
+    border-block: 2px solid var(--btn-color-2);
+  }
+
+  tbody tr:hover td.checkbox input::before {
+    display: block;
+  }
+
+  .items-table tbody tr:active {
+    cursor: grabbing;
+    outline: 1px solid #eee;
+  }
+
+  .del-quote-btn {
+    pointer-events: none;
+    visibility: hidden;
+    cursor: pointer;
+    width: 1.2vw;
+    min-width: 12px;
+  }
+
+  .del-selected-btn {
+    visibility: hidden;
+    pointer-events: none;
+    width: 1.8vw;
+    cursor: pointer;
+  }
+
+  .del-selected-btn.active {
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  .undo-del-btn {
+    display: none;
+    width: 1.2vw;
+  }
+
+  .undo-del-btn.active {
+    display: block;
+  }
+
+  .suggested-popover,
+  .add-items-popover,
+  .approve-quote-popover,
+  .delete-quote-modal,
+  .undo-quote-modal,
+  .sourcing-confirm-modal {
+    width: 90%;
+    max-width: 800px;
+    border: none;
+    border-radius: 10px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 20px 24px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+    background: #fff;
+  }
+
+  .delete-confirm-popover,
+  .delete-selected-popover {
+    border: none;
+  }
+
+  .delete-quote-modal h2,
+  .modal-header {
+    font-size: clamp(14px, 1vw, 18px);
+  }
+
+  .delete-quote-modal h2 {
+    margin-bottom: 1vw;
+  }
+
+  .suggested-popover:popover-open,
+  .delete-confirm-popover:popover-open,
+  .delete-selected-popover:popover-open,
+  .approve-quote-popover:popover-open,
+  .add-items-popover {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 999;
+  }
+
+  .delete-quote-modal,
+  .undo-quote-modal,
+  .sourcing-confirm-modal,
+  .confirm-save-modal {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 999;
+    width: fit-content;
+  }
+
+  .suggested-prods-small {
+    max-width: 400px;
+    border: none;
+    border-radius: 10px;
+    max-height: 0;
+    overflow: auto;
+    padding: 0 14px 10px 14px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .suggested-prods-small.active {
+    max-height: 30vh;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-block: 10px;
+    margin-bottom: 7px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .suggested-popover .search-bar,
+  .suggested-prods-small .search-bar {
+    width: 100%;
+    padding: 0.3em 0.5em;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .suggested-prods-small .modal-header h2,
+  .undo-quote-modal .modal-title {
+    font-size: 14px;
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .product-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+    cursor: pointer;
+    padding: 0.5em 1em;
+  }
+
+  .product-item:hover {
+    background-color: rgba(180, 180, 180, 0.151);
+  }
+
+  .product-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .suggested-popover .product-id {
+    color: var(--btn-color-2);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+  }
+
+  .suggested-prods-small .product-id {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-family: "Poppins Medium";
+    color: #333;
+    font-size: 13px;
+  }
+
+  strong {
+    font-family: "Poppins Semibold";
+    font-weight: normal;
+  }
+
+  .product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13px;
+    color: #555;
+    margin-top: 3px;
+  }
+
+  .delete-confirm-popover,
+  .delete-selected-popover,
+  .approve-quote-popover {
+    padding: 1vw;
+    border-radius: 0.5vw;
+    box-shadow: 0 0 10px -2px rgba(128, 128, 128, 0.336);
+  }
+
+  .product-desc {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .actions-btns {
+    gap: 0.5vw;
+    margin-top: 0;
+    margin-inline: auto;
+  }
+  .num:not(.selling-price) {
+    outline: none;
+    min-width: 0;
+    color: var(--btn-color-2);
+  }
+
+  .del-selected-btn {
+    width: 1.2vw;
+  }
+
+  .unit-cost {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .money {
+    white-space: nowrap;
+  }
+
+  .items-table .total-cost {
+    white-space: nowrap;
+  }
+
+  .items-table td input {
+    max-width: 45px;
+    min-width: 20px;
+  }
+
+  .items-table .num:not(.selling-price) {
+    border-bottom: 1px solid var(--btn-color-2);
+    padding: 0;
+  }
+  .yes-btn,
+  .yes-btn2,
+  .confirm-save,
+  .close-window,
+  .no-btn2,
+  .no-btn,
+  .undo-yes-btn,
+  .undo-no-btn,
+  .approve-confirm-btn,
+  .add-items-modal .cancel-btn,
+  .add-items-modal .add-item-btn {
+    border: 1px solid var(--btn-color-2);
+    font-size: 14px;
+    padding: 0.5vw 2.5vw;
+    border-radius: 5px;
+  }
+
+  .yes-btn,
+  .yes-btn2,
+  .confirm-save,
+  .undo-yes-btn,
+  .approve-confirm-btn,
+  .add-items-modal .add-item-btn {
+    background-color: var(--btn-color-2);
+    color: white;
+  }
+
+  .no-btn,
+  .no-btn2,
+  .undo-no-btn,
+  .close-window,
+  .add-items-modal .cancel-btn {
+    color: var(--btn-color-2);
+  }
+  .modal-text {
+    font-size: 14px;
+  }
+
+  .delete-confirm-popover .modal-header {
+    color: var(--btn-color-2);
+  }
+
+  .items-table tr.deleted > * {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .undo-del-btn {
+    cursor: pointer;
+    pointer-events: all !important;
+    opacity: 1 !important;
+  }
+
+  .items-table tr.deleted .del-quote-btn {
+    display: none;
+  }
+
+  .items-table thead {
+    position: sticky;
+    z-index: 9;
+  }
+
+  .ghost {
+    opacity: 0;
+    outline: 1px solid #eee;
+  }
+
+  .suggested-prods-small {
+    position: absolute;
+    width: 25vw;
+    transition: all 0.1s ease;
+  }
+
+  .source-tag {
+    font-size: 10px;
+    padding: 3px 5px;
+    white-space: nowrap;
+    color: rgb(2, 110, 153);
+    font-family: "Poppins Semibold";
+  }
+
+  .stock-status {
+    padding: 2px 3px;
+    color: white;
+    border-radius: 2px;
+  }
+
+  .stock-status.red {
+    background-color: rgb(214, 52, 52);
+  }
+
+  .items-table .item-desc + .flexbox {
+    flex-wrap: wrap;
+  }
+
+  .stock-status.green {
+    background-color: green;
+  }
+
+  .suggested-prods-small .product-list .product-item > * {
+    font-size: 11px !important;
+  }
+
+  .suggested-prods-small .modal-header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+
+  .suggested-prods-small .product-desc {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+  }
+
+  .suggested-prods-small .product-list {
+    max-height: none;
+  }
+
+  .expand-popover-btn {
+    width: 1vw;
+  }
+
+  .percent {
+    white-space: nowrap;
+  }
+
+  .items-table td input.margin {
+    padding-inline: 0;
+  }
+
+  .items-table td:has(.selling-price) {
+    width: 50px;
+    white-space: nowrap;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .dropdown-btn {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font-family: system-ui, sans-serif;
+  }
+
+  .products-dropdown {
+    padding: 8px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 280px;
+    position: fixed;
+    display: none;
+    border: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 99;
+  }
+  .products-dropdown.active {
+    display: block;
+  }
+  .dropdown-item {
+    padding: 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: "Poppins Medium";
+    color: var(--btn-color-2);
+  }
+
+  .dropdown-item strong,
+  .dropdown-item p {
+    font-size: 11px;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .dropdown-item strong {
+    color: var(--btn-color-2);
+  }
+
+  .dropdown-item:hover {
+    background: var(--btn-color-2);
+    color: white;
+  }
+
+  .click-to-add-btn.bottom {
+    margin-top: 0;
+    margin-left: auto;
+    padding: 0.2vw;
+    position: absolute;
+    top: 100%;
+    right: 1vw;
+    width: fit-content;
+    width: 3vw;
+    z-index: 99999;
+  }
+
+  .suggested-prods-small {
+    position: absolute;
+    z-index: 99;
+  }
+
+  .add-items-modal .modal-header h1 {
+    font-size: 1.2vw;
+    margin-bottom: 0;
+  }
+
+  .add-items-modal thead th {
+    padding: 0.5vw;
+    background-color: rgba(172, 171, 171, 0.247);
+  }
+
+  .add-items-modal input {
+    min-width: 0;
+    width: 5vw;
+  }
+
+  .add-items-modal td {
+    padding: 5px;
+  }
+
+  .add-items-modal .action-btns {
+    justify-content: flex-end;
+    margin-top: 1vw;
+  }
+
+  .prod-info {
+    gap: 0.5vw;
+  }
+
+  .modal-total-price {
+    font-family: "Poppins Semibold";
+    border-right: transparent;
+  }
+
+  td:last-child {
+    border-left: transparent;
+    align-content: center;
+  }
+
+  .modal-prod-id {
+    color: var(--btn-color-2);
+    font-family: "Poppins Semibold";
+  }
+  .modal-prod-desc {
+    color: gray;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .add-items-modal .num {
+    color: var(--btn-color-2);
+    font-family: "Poppins Medium";
+  }
+  .add-items-modal .modal-close-btn {
+    font-size: 1.5vw;
+  }
+
+  .add-items-popover {
+    width: 20vw;
+    padding: 0.5vw;
+    max-height: 40vh;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    display: none;
+  }
+
+  .add-items-popover.show {
+    display: block;
+  }
+
+  .add-items-popover .product-id {
+    font-size: 12px;
+    font-family: "Poppins Semibold";
+  }
+
+  .add-items-popover .product-item {
+    padding-inline: 5px 0;
+  }
+
+  .add-items-popover .product-desc,
+  .add-items-popover .product-meta {
+    font-size: 11px;
+  }
+
+  .upload-section {
+    padding: 2.5vw 1.5vw;
+    display: none;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .upload-section.show {
+    display: flex;
+  }
+
+  .order-pad .table-container.show {
+    display: block;
+  }
+
+  .order-pad .table-container {
+    display: none;
+  }
+
+  .file-info {
+    gap: 1vw;
+    border: 1px solid rgb(78, 78, 78);
+    border-radius: 4px;
+    padding: 0.5em 0.7em;
+    font-size: 13px;
+    margin-bottom: 0.5vw;
+  }
+
+  .upload-status {
+    font-size: 12px;
+    gap: 0.4vw;
+  }
+
+  .uploaded-item {
+    margin-bottom: 1vw;
+  }
+
+  .files-supported {
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+    text-align: center;
+    padding: 1em;
+  }
+
+  .upload-status p {
+    margin-bottom: 0;
+  }
+
+  .file-delete-btn {
+    margin-left: auto;
+  }
+
+  .select-files-btn {
+    padding: 0.3em 0.7em;
+    text-align: center;
+    color: var(--btn-color-2);
+    border: 1px solid var(--btn-color-2);
+    width: 100%;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .select-files-btn:hover {
+    background-color: var(--btn-color-2);
+    color: white;
+  }
+
+  .file-icon {
+    width: 1.8vw;
+  }
+
+  .delete-icon {
+    width: 1vw;
+  }
+
+  .status-icon {
+    width: 1vw;
+  }
+
+  .score {
+    white-space: nowrap;
+  }
+
+  .approve-quote-popover:popover-open {
+    width: 25vw;
+    translate: 0% 0%;
+    left: 50%;
+    top: 50%;
+  }
+
+  .quote-delete-btn {
+    margin-left: 10px;
+  }
+
+  .quote-delete-btn.hide {
+    display: none;
+  }
+
+  #delete-quote-id,
+  #undo-quote-id {
+    color: var(--btn-color-2);
+    margin-left: 0.4vw;
+  }
+
+  .quote-undo-btn {
+    width: 1.2vw;
+    display: none;
+    margin-left: 1vw;
+  }
+
+  .quote-undo-btn.active {
+    display: block;
+  }
+
+  .items-table tr {
+    position: relative;
+  }
+
+  .items-table tr:hover .add-note-tip {
+    display: block;
+  }
+
+  .add-note-tip {
+    position: absolute;
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-image: linear-gradient(45deg, white 50%, white 50%, gray 50%);
+    right: 1px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  td:nth-child(11) {
+    align-content: center;
+  }
+
+  .add-note-actions {
+    justify-content: flex-end;
+    gap: 0.5vw;
+  }
+
+  .add-note-popover {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: none;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px -1px rgba(90, 90, 90, 0.418);
+    border-radius: 3px;
+    padding: 1vw;
+  }
+
+  .note-header {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Poppins Semibold";
+  }
+
+  .note-desc {
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  #addNote .add-note-btn {
+    background-color: var(--btn-color-2);
+    color: white;
+  }
+
+  #addNote .cancel-add-note {
+    border: 1px solid var(--btn-color-2);
+    font-size: 12px;
+    padding: 0.35em 1em;
+    border-radius: 3px;
+    margin-left: 0.5vw;
+    color: var(--btn-color-2);
+  }
+
+  .add-note-tip.note-added {
+    background-image: linear-gradient(
+      45deg,
+      white 50%,
+      white 50%,
+      rgb(0, 73, 141) 50%
+    );
+  }
+
+  .undo-quote-modal .modal-title,
+  .sourcing-confirm-modal .modal-title {
+    margin-bottom: 1.5vw;
+    font-size: 14px;
+  }
+
+  .product-panel {
+    display: flex;
+    gap: 40px;
+    background: #f4f8fc;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 1vw 0.5vw;
+    width: 100%;
+  }
+
+  .product-panel h3 {
+    font-family: "Poppins Semibold";
+    font-weight: normal;
+  }
+
+  .left {
+    display: flex;
+    gap: 20px;
+    max-width: 50%;
+  }
+
+  .prod-img {
+    width: 8vw;
+    height: auto;
+  }
+
+  .description {
+    flex: 1;
+  }
+
+  .specs {
+    flex: 1;
+  }
+
+  .spec-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 25px;
+  }
+
+  .spec-row span {
+    color: #555;
+    font-size: 12px;
+    display: block;
+  }
+
+  .spec-row strong {
+    font-size: 12px;
+    font-family: "Poppins Semibold";
+    font-weight: normal;
+  }
+
+  .products-popover {
+    width: 380px;
+    border-radius: 5px;
+    padding: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      transform 0.2s ease;
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
+
+  .products-popover.active {
+    opacity: 1;
+    z-index: 999;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .products-popover .header {
+    display: flex;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .products-popover .search-input {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  .products-popover .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+
+  .products-popover .title {
+    margin-inline: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-block: 5px 0;
+    color: rgb(37, 37, 37);
+  }
+
+  .products-popover .list {
+    max-height: 240px;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .products-popover .item {
+    padding: 7px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+  }
+
+  .products-popover .item:hover {
+    background: #f6faff;
+  }
+
+  .products-popover .id {
+    font-weight: 600;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .uploaded-item {
+    max-height: 1000px;
+    overflow-y: auto;
+  }
+
+  .select-files-btn {
+    margin-top: 10px;
+  }
+
+  .products-popover .prod-tag {
+    font-size: 9px;
+    padding: 2px 5px;
+    line-height: 1.4;
+    border-radius: 2px;
+    color: #fff;
+  }
+
+  .prod-tag.danger {
+    background: #d9534f;
+  }
+
+  .prod-tag.success {
+    background: #28a745;
+  }
+
+  .products-popover .score {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .products-popover .desc {
+    margin: 4px 0 0;
+    font-size: 11px;
+    color: #666;
+  }
+
+  @media screen and (max-width: 1600px) {
+    .yes-btn,
+    .no-btn,
+    .undo-yes-btn,
+    .undo-no-btn,
+    .yes-btn2,
+    .confirm-save,
+    .close-window,
+    .no-btn2,
+    .add-items-modal .add-item-btn,
+    .approve-confirm-btn,
+    .add-items-modal .cancel-btn {
+      font-size: 12px;
+      padding: 0.5em 2em;
+    }
+    .dropdown-item {
+      padding: 4px;
+    }
+    .spec-row span,
+    .spec-row strong {
+      font-size: 11px;
+    }
+  }
+}

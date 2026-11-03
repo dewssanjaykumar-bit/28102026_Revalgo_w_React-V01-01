@@ -1,0 +1,192 @@
+.login-page {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+@scope (.login-page) {
+  .bg {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .bg-absolute {
+    position: absolute;
+    inset: 0 0 0 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .bg-circle {
+    position: absolute;
+    top: 8.5%;
+    left: 5.2%;
+    width: 15.8vw;
+    min-width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .bg-circle.orange {
+    top: auto;
+    bottom: 5.2%;
+    right: 1.1%;
+    width: 15.3vw;
+    left: auto;
+  }
+
+  .bg-diamonds {
+    position: absolute;
+    width: 40%;
+    min-width: 500px;
+    height: auto;
+    bottom: -24%;
+    left: -17.4%;
+    transform: scale(1.1);
+  }
+
+  .bg-diamonds.right {
+    right: -17.4%;
+    top: -25%;
+    bottom: auto;
+    left: auto;
+    transform: scale(1.1) rotate(180deg);
+  }
+
+  .logo {
+    width: 220px;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .login-card {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    width: 640px;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 3%;
+    padding: 6% 3.5% 2.5% 3.5%;
+    background-color: white;
+  }
+
+  .card-header {
+    text-align: center;
+  }
+
+  .card-header {
+    font-weight: 700;
+    font-size: 55px;
+    margin-bottom: 0.8em;
+  }
+
+  .forgot-password {
+    color: var(--btn-color);
+    cursor: pointer;
+  }
+
+  .login-btn {
+    padding: 0.75em;
+    background-color: var(--btn-color);
+    color: white;
+    width: 100%;
+    border-radius: 0.5em;
+    margin-bottom: 1vw;
+    font-size: large;
+  }
+
+  .login-btn:hover {
+    background-color: #027bbde1;
+  }
+
+  .login-with-microsoft {
+    margin-top: 0.5vw;
+    display: inline-block;
+    color: var(--btn-color);
+  }
+
+  .user-icon,
+  .lock-icon {
+    width: 20px;
+    color: gray;
+  }
+  .form-field {
+    width: 100%;
+    border-bottom: 1px solid #a5a5a59f;
+    margin-top: 1.5vw;
+    font-size: large;
+    color: rgb(160, 160, 160);
+  }
+  ::placeholder {
+    color: rgb(158, 158, 158);
+  }
+  #username,
+  #password {
+    border: none;
+    width: 0;
+    flex-grow: 1;
+    padding: 0.5em;
+  }
+  .form-field.remember-me {
+    border-bottom: none;
+    margin-block: 0.8vw 2vw;
+  }
+
+  @media screen and (max-width: 1600px) {
+    .login-card {
+      width: 600px;
+    }
+    .card-header {
+      font-size: 42px;
+    }
+    .logo {
+      width: 180px !important;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    .login-card {
+      width: 500px;
+      border-radius: 10px;
+      top: 50%;
+      font-size: medium;
+    }
+    .form-field {
+      font-size: medium;
+    }
+    .card-header {
+      font-size: 34px;
+    }
+    .login-btn {
+      border-radius: 5px;
+    }
+    .logo {
+      width: 120px !important;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .login-card {
+      width: 400px;
+      font-size: small;
+    }
+    .form-field {
+      font-size: small;
+    }
+    .login-btn {
+      font-size: small;
+    }
+    .card-header {
+      font-size: 28px;
+    }
+    .form-field {
+      margin-top: 20px;
+    }
+  }
+}
